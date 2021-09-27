@@ -30,5 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 To the skeleton the following commands has been used:
 
-- ng g c navigationBar
 - ng g c home
+- ng g c navigationBar
+
+- ng g m creditCard --routing
+- ng g c -m credit-card credit-card/add
