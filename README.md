@@ -38,3 +38,6 @@ To the skeleton the following commands has been used:
 - ng g c -m credit-card credit-card/list
 - ng g c -m credit-card credit-card/listItem
 - ng g s credit-card/service/creditCard
+
+- ng g m transaction --routing
+- ng g c -m transaction transaction/overview
