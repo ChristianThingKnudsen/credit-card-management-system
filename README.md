@@ -41,3 +41,6 @@ To the skeleton the following commands has been used:
 
 - ng g m transaction --routing
 - ng g c -m transaction transaction/overview
+- ng g c -m transaction transaction/list
+- ng g c -m transaction transaction/listItem
+- ng g c -m transaction transaction/add
