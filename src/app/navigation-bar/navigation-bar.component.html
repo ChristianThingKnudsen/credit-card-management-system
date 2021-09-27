@@ -1,8 +1,14 @@
 <!-- <p>navigation-bar works!</p> -->
-<div>
-  {{ title }}
-  <a routerLink="">Home</a>
 
-  <a routerLink="/transactions">Transactions</a>
+<div class="row">
+  <div class="block">
+    {{ title }}
+  </div>
+
+  <div class="block">
+    <a routerLink="">Home</a>
+    <a routerLink="/transactions">Transactions</a>
+  </div>
 </div>
+
 <router-outlet></router-outlet>
