@@ -6,8 +6,9 @@ import { TransactionListComponent } from './list/list.component';
 import { TransactionOverviewComponent } from './overview/overview.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'overview', pathMatch: 'full' },
   {
-    path: '',
+    path: 'overview',
     component: TransactionOverviewComponent,
   },
   {
