@@ -36,6 +36,14 @@ li a:hover {
   background-color: #04aa6d;
 }
 
+li:last-child {
+  border-right: none;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
 h1 {
   text-align: center;
   color: white;

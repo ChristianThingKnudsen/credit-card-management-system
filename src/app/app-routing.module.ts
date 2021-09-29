@@ -8,7 +8,14 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'users',
+    path: 'credit-card',
+    loadChildren: () =>
+      import('./credit-card/credit-card.module').then(
+        (m) => m.CreditCardModule
+      ),
+  },
+  {
+    path: 'transactions',
     loadChildren: () =>
       import('./transaction/transaction.module').then(
         (m) => m.TransactionModule
