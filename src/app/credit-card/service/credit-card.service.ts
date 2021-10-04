@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CreditCard } from '../credit-card.type';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,17 @@ export class CreditCardService {
   constructor(private http: HttpClient) {}
   
   getCreditCards(): Observable<CreditCard[]> {
-    console.log("Path: " + `${this.rootUrl}/credit_cards`)
     const creditCards = this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`)
-    console.log("CreditCards: " + creditCards)
     return creditCards
   }
 
-  getCreditCard(id: any): Observable<CreditCard> {
-    const creditCards = this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`)
-    let card
-
-    creditCards.subscribe( creditCards => {
-      card = creditCards[id]
-      return card
-    })
-    
-    console.log("Card: " + card)
-
-    if (card != null) {
-      return card //TODO Does not work
-    } else {
-      throw new Error(`ID ${id} was not found`)
-    }
+  getCreditCard(id: any): Observable<CreditCard | undefined> {
+    return this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`).pipe(
+      switchMap(list => {
+        let item = list[+id]
+        return of(item)
+      }
+    ))
   }
 }
+
