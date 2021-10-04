@@ -1,1 +1,8 @@
-<p>list-item works!</p>
+<p>details works!</p>
+<div>
+  <div *ngIf="creditCard$ | async as creditCard">
+    <li>Card number: <span>{{ creditCard.card_number }}</span></li>
+    <li>Cardholder name: <span>{{ creditCard.cardholder_name }} $</span></li>
+    <li>Issuer: <span>{{ creditCard.issuer }}</span></li>
+  </div>
+</div>

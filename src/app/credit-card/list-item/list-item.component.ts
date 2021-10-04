@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CreditCardService } from '../service/credit-card.service';
 
 @Component({
   selector: 'app-list-item',
@@ -6,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-item.component.css'],
 })
 export class CreditCardListItemComponent implements OnInit {
-  constructor() {}
+  
+  creditCard$
+  id
+
+  constructor(private creditCardService: CreditCardService, private activatedRoute: ActivatedRoute) {
+    this.id = this.activatedRoute.snapshot.params["id"]
+    this.creditCard$ = this.creditCardService.getCreditCard(this.id)
+  }
 
   ngOnInit(): void {}
 }
