@@ -1,4 +1,9 @@
 <p>list works!</p>
 <ul>
-    <li *ngFor="let creditCard of (creditCards| async); index as i;"><a routerLink="list/{{i}}">{{creditCard.card_number}}, {{creditCard.cardholder_name}}, {{creditCard.issuer}}</a></li>
+  <li *ngFor="let creditCard of creditCards | async; index as i">
+    <a routerLink="{{ i }}"
+      >{{ creditCard.card_number }}, {{ creditCard.cardholder_name }},
+      {{ creditCard.issuer }}</a
+    >
+  </li>
 </ul>

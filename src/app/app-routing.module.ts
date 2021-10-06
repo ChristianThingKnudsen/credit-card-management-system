@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { TransactionOverviewComponent } from './transaction/overview/overview.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
   {
     path: 'credit-card',
     loadChildren: () =>
@@ -14,6 +11,7 @@ const routes: Routes = [
         (m) => m.CreditCardModule
       ),
   },
+  { path: '', redirectTo: '/credit-card/list', pathMatch: 'full' },
   {
     path: 'transactions',
     loadChildren: () =>

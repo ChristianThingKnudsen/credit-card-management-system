@@ -5,21 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
-import { CreditCardModule } from './credit-card/credit-card.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationBarComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CreditCardModule,
-    HttpClientModule
-  ],
+  declarations: [AppComponent, NavigationBarComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

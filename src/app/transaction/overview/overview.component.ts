@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import '../transaction.module';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',

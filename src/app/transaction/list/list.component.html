@@ -1,1 +1,8 @@
 <p>list works!</p>
+<ul>
+  <li *ngFor="let transaction of transactions | async; index as i">
+    <a routerLink="list/{{ i }}"
+      >{{ transaction.uid }}, {{ transaction.currency }}</a
+    >
+  </li>
+</ul>

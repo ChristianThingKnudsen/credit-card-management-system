@@ -5,7 +5,6 @@ import { CreditCardListItemComponent } from './list-item/list-item.component';
 import { CreditCardListComponent } from './list/list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'add', pathMatch: 'full' },
   {
     path: 'add',
     component: CreditCardAddComponent,

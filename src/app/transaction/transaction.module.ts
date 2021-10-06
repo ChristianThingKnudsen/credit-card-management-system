@@ -15,5 +15,11 @@ import { TransactionAddComponent } from './add/add.component';
     TransactionAddComponent,
   ],
   imports: [CommonModule, TransactionRoutingModule],
+  exports: [
+    TransactionOverviewComponent,
+    TransactionListComponent,
+    TransactionListItemComponent,
+    TransactionAddComponent,
+  ],
 })
 export class TransactionModule {}
