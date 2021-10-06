@@ -36,6 +36,12 @@ export class CreditCardService {
     this.http.delete(url).subscribe();
   }
 
+  addCreditCard(creditCard: CreditCard) {
+    const url = `${this.rootUrl}/credit_cards/`;
+    console.log(url);
+    this.http.post(url, creditCard).subscribe();
+  }
+
   getTransactions(): Observable<Transaction[]> {
     const transactions = this.http.get<Transaction[]>(
       `${this.rootUrl}/transactions`

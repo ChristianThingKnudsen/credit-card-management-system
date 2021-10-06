@@ -6,6 +6,7 @@ import { CreditCardAddComponent } from './add/add.component';
 import { CreditCardListComponent } from './list/list.component';
 import { CreditCardListItemComponent } from './list-item/list-item.component';
 import { CreditCardService } from './service/credit-card.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,11 @@ import { CreditCardService } from './service/credit-card.service';
     CreditCardListComponent,
     CreditCardListItemComponent,
   ],
-  imports: [CommonModule, CreditCardRoutingModule],
-  exports: [CreditCardAddComponent, CreditCardListComponent, CreditCardListItemComponent],
+  imports: [CommonModule, CreditCardRoutingModule, ReactiveFormsModule],
+  exports: [
+    CreditCardAddComponent,
+    CreditCardListComponent,
+    CreditCardListItemComponent,
+  ],
 })
 export class CreditCardModule {}
