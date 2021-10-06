@@ -20,13 +20,20 @@ export class CreditCardService {
     return creditCards;
   }
 
-  getCreditCard(id: any): Observable<CreditCard | undefined> {
+  getCreditCard(id: Number): Observable<CreditCard | undefined> {
     return this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`).pipe(
       switchMap((list) => {
         let item = list[+id];
         return of(item);
       })
     );
+  }
+
+  deleteCreditCard(card_number: Number) {
+    console.log(`Trying to remove creditcard with number: ${card_number}`);
+    const url = `${this.rootUrl}/credit_cards/${card_number}`;
+    console.log(url);
+    this.http.delete(url).subscribe();
   }
 
   getTransactions(): Observable<Transaction[]> {

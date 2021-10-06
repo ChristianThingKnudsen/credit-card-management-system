@@ -1,8 +1,25 @@
 <p>details works!</p>
+
 <div>
   <div *ngIf="creditCard$ | async as creditCard">
-    <li>Card number: <span>{{ creditCard.card_number }}</span></li>
-    <li>Cardholder name: <span>{{ creditCard.cardholder_name }} $</span></li>
-    <li>Issuer: <span>{{ creditCard.issuer }}</span></li>
+    <button (click)="deleteCreditCard(creditCard)">Remove credit card</button>
+    <li>
+      Card number: <span>{{ creditCard.card_number }}</span>
+    </li>
+    <li>
+      Cardholder name: <span>{{ creditCard.cardholder_name }}</span>
+    </li>
+    <li>
+      CSC code: <span>{{ creditCard.csc_code }}</span>
+    </li>
+    <li>
+      Date month: <span>{{ creditCard.expiration_date_month }}</span>
+    </li>
+    <li>
+      Date year: <span>{{ creditCard.expiration_date_year }}</span>
+    </li>
+    <li>
+      Issuer: <span>{{ creditCard.issuer }}</span>
+    </li>
   </div>
 </div>
