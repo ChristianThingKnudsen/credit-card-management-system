@@ -48,4 +48,24 @@ export class CreditCardService {
     );
     return transactions;
   }
+
+  filterTransactions(card_number: number): Observable<Transaction[]> {
+    let filteredTransactions: Transaction[] = [];
+
+    const transactions = this.http
+      .get<Transaction[]>(`${this.rootUrl}/transactions`)
+      .pipe(
+        switchMap((list) => {
+          for (let index = 0; index < list.length; index++) {
+            const element = list[index];
+            if (element.credit_card.card_number == card_number) {
+              filteredTransactions.push(element);
+            }
+          }
+          return of(filteredTransactions);
+        })
+      )
+      .subscribe();
+    return of(filteredTransactions);
+  }
 }

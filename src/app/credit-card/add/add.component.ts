@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreditCard } from '../credit-card.type';
 import { FormBuilder } from '@angular/forms';
 import { CreditCardService } from '../service/credit-card.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -20,7 +21,8 @@ export class CreditCardAddComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private creditCardService: CreditCardService
+    private creditCardService: CreditCardService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,5 +40,7 @@ export class CreditCardAddComponent implements OnInit {
       issuer: this.creditCardForm.value.issuer,
     };
     this.creditCardService.addCreditCard(creditCard);
+
+    this.router.navigate(['../']);
   }
 }

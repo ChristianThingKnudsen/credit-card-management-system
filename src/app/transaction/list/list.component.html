@@ -1,6 +1,12 @@
 <p>list works!</p>
+<select formControlName="creditCard" id="card_number">
+  <option *ngFor="let creditCard of creditCards$ | async">
+    {{ creditCard.card_number }}
+  </option>
+</select>
+<button (click)="filterTransactions()">Filter transaction</button>
 <ul>
-  <li *ngFor="let transaction of transactions | async; index as i">
+  <li *ngFor="let transaction of transactions$ | async; index as i">
     <a routerLink="list/{{ i }}"
       >{{ transaction.uid }}, {{ transaction.currency }}</a
     >
