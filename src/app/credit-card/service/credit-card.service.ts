@@ -36,6 +36,13 @@ export class CreditCardService {
     this.http.delete(url).subscribe();
   }
 
+  deleteTransaction(id: String) {
+    console.log(`Trying to remove transaction with id: ${id}`);
+    const url = `${this.rootUrl}/transactions/${id}`;
+    console.log(url);
+    this.http.delete(url).subscribe();
+  }
+
   addCreditCard(creditCard: CreditCard) {
     const url = `${this.rootUrl}/credit_cards/`;
     console.log(url);
@@ -52,12 +59,12 @@ export class CreditCardService {
   filterTransactions(card_number: number): Observable<Transaction[]> {
     let filteredTransactions: Transaction[] = [];
 
-    const transactions = this.http
-      .get<Transaction[]>(`${this.rootUrl}/transactions`)
+    this.getTransactions()
       .pipe(
         switchMap((list) => {
           for (let index = 0; index < list.length; index++) {
-            const element = list[index];
+            let element = list[index];
+            element.amount = Number(element.amount.toFixed(2));
             if (element.credit_card.card_number == card_number) {
               console.log('Transactions: ' + element.uid);
               filteredTransactions.push(element);

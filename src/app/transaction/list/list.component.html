@@ -10,5 +10,6 @@
     <a routerLink="list/{{ i }}"
       >{{ transaction.uid }}, {{ transaction.currency }}</a
     >
+    <button (click)="deleteTransaction(transaction.uid)">Delete</button>
   </li>
 </ul>
