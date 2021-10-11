@@ -59,6 +59,7 @@ export class CreditCardService {
           for (let index = 0; index < list.length; index++) {
             const element = list[index];
             if (element.credit_card.card_number == card_number) {
+              console.log('Transactions: ' + element.uid);
               filteredTransactions.push(element);
             }
           }
