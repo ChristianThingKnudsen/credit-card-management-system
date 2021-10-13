@@ -16,7 +16,7 @@ export class TransactionAddComponent implements OnInit {
   creditCards$: Observable<CreditCard[]>;
 
   transactionForm = this.formBuilder.group({
-    credit_card: [''],
+    credit_card: ['', Validators.required],
     amount: ['', [Validators.required]],
     currency: ['', [Validators.required]],
     date: ['', [Validators.required]],
@@ -61,5 +61,9 @@ export class TransactionAddComponent implements OnInit {
 
   get date(): FormControl {
     return this.transactionForm.get('date') as FormControl;
+  }
+
+  get credit_card(): FormControl {
+    return this.transactionForm.get('credit_card') as FormControl;
   }
 }

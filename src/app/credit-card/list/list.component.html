@@ -2,8 +2,8 @@
 <ul>
   <li *ngFor="let creditCard of creditCards | async; index as i">
     <a routerLink="{{ i }}"
-      >{{ creditCard.card_number }}, {{ creditCard.cardholder_name }},
-      {{ creditCard.issuer }}</a
+      >{{ creditCard?.card_number }}, {{ creditCard?.cardholder_name }},
+      {{ creditCard?.issuer }}</a
     >
   </li>
 </ul>

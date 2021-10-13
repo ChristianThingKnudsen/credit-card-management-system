@@ -10,25 +10,27 @@
         {{ creditCard.card_number }}
       </option>
     </select>
-    <!-- <div *ngIf="credit_card.invalid">
+    <div
+      *ngIf="credit_card.invalid && (credit_card.dirty || credit_card.touched)"
+    >
       <div *ngIf="credit_card.errors?.required">Field is required</div>
-    </div> -->
+    </div>
     <hr />
     <label for="amount">Amount: </label>
     <input type="number" formControlName="amount" />
-    <div *ngIf="amount.invalid">
+    <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
       <div *ngIf="amount.errors?.required">Field is required</div>
     </div>
     <hr />
     <label for="currency">Currency: </label>
     <input type="text" formControlName="currency" />
-    <div *ngIf="currency.invalid">
+    <div *ngIf="currency.invalid && (currency.dirty || currency.touched)">
       <div *ngIf="currency.errors?.required">Field is required</div>
     </div>
     <hr />
     <label for="date">Date: </label>
     <input type="date" formControlName="date" />
-    <div *ngIf="date.invalid">
+    <div *ngIf="date.invalid && (date.dirty || date.touched)">
       <div *ngIf="date.errors?.required">Field is required</div>
     </div>
     <hr />
