@@ -56,6 +56,12 @@ export class CreditCardService {
     return transactions;
   }
 
+  addTransaction(transaction: Transaction) {
+    const url = `${this.rootUrl}/transactions/`;
+    console.log(url);
+    this.http.post(url, transaction).subscribe();
+  }
+
   filterTransactions(card_number: number): Observable<Transaction[]> {
     let filteredTransactions: Transaction[] = [];
 

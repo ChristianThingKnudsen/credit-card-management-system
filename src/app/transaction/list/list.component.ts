@@ -39,4 +39,8 @@ export class TransactionListComponent implements OnInit {
     );
     console.log('List: ', this.transactions$);
   }
+
+  addTransaction() {
+    this.router.navigate(['/transactions/add']);
+  }
 }

@@ -1,1 +1,28 @@
-<p>add works!</p>
+<p>Works</p>
+<form [formGroup]="transactionForm" (ngSubmit)="addTransaction()">
+  <div class="form-wrapper">
+    <label for="card_number">Card number: </label>
+    <select formControlName="credit_card">
+      <option
+        *ngFor="let creditCard of creditCards$ | async"
+        [ngValue]="creditCard"
+      >
+        {{ creditCard.card_number }}
+      </option>
+    </select>
+    <hr />
+    <label for="amount">Amount: </label>
+    <input type="number" formControlName="amount" />
+    <hr />
+    <label for="currency">Currency: </label>
+    <input type="text" formControlName="currency" />
+    <hr />
+    <label for="date">Date: </label>
+    <input type="date" formControlName="date" />
+    <hr />
+    <label for="comment">Comment: </label>
+    <input type="text" formControlName="comment" />
+    <hr />
+    <button type="submit">Add transaction</button>
+  </div>
+</form>

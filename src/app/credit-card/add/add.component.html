@@ -1,4 +1,3 @@
-<p>add works!</p>
 <form [formGroup]="creditCardForm" (ngSubmit)="addCreditCard()">
   <div class="form-wrapper">
     <label for="card_number">Card number: </label>
@@ -28,31 +27,7 @@
     <hr />
     <label for="issuer">Issuer: </label>
     <input type="text" formControlName="issuer" />
-
-    <!-- <label for="last_name">Last name</label>
-    <input type="text"  formControlName="last_name">
-    <hr />
-    <label for="phone">Phone</label>
-    <input type="text" formControlName="phone">
-    <label for="email">E-mail</label>
-    <input type="text"  formControlName="email">    
-    <hr /> -->
-    <!-- <label for="class">Class</label>
-    <select formControlName="class" [compareWith]="compareClasses">
-      <option *ngFor="let class of classes$ | async" [ngValue]="class">
-        {{ class.name }}
-      </option>
-    </select> -->
-    <!-- <hr /> -->
-    <!-- <button type="button" (click)="onAutofill()">Autofill</button> -->
     <hr />
     <button type="submit">Add credit card</button>
   </div>
 </form>
-<!-- <h2>Model</h2>
-<pre
-  >{{ creditCardForm.value | json }}
-</pre> -->
-<!-- <pre
-  >{{ creditCardForm.status }}
-</pre> -->

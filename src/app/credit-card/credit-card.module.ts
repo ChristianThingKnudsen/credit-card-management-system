@@ -6,7 +6,6 @@ import { CreditCardAddComponent } from './add/add.component';
 import { CreditCardListComponent } from './list/list.component';
 import { CreditCardListItemComponent } from './list-item/list-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TransactionListItemComponent } from '../transaction/list-item/list-item.component';
 import { TransactionModule } from '../transaction/transaction.module';
 
 @NgModule({

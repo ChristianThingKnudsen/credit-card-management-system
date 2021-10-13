@@ -1,11 +1,13 @@
 <h1>Transaction Overview</h1>
 <a>Credit card number: </a>
-<select formControlName="creditCard" id="card_number">
+<select id="card_number">
   <option *ngFor="let creditCard of creditCards$ | async">
     {{ creditCard.card_number }}
   </option>
 </select>
 <button (click)="filterTransactions()">Filter transaction</button>
+<button (click)="addTransaction()">Add Transaction</button>
+
 <ul>
   <transaction-list-item
     *ngFor="let transaction of transactions$ | async; index as i"

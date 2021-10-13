@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { mergeMap, switchMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { Transaction } from 'src/app/transaction/transaction.type';
 import { CreditCard } from '../credit-card.type';
 import { CreditCardService } from '../service/credit-card.service';
@@ -25,8 +24,10 @@ export class CreditCardListItemComponent implements OnInit {
     this.creditCard$ = this.creditCardService.getCreditCard(this.id);
 
     this.transactions$ = this.creditCard$.pipe(
-      mergeMap((result) => {
-        return this.displayTransactions(result!.card_number);
+      switchMap((result) => {
+        return this.creditCardService.filterTransactions(
+          Number(result!.card_number)
+        );
       })
     );
   }
@@ -36,12 +37,6 @@ export class CreditCardListItemComponent implements OnInit {
     const cardNumber = creditCard.card_number;
     this.creditCardService.deleteCreditCard(cardNumber);
     this.router.navigate(['../']);
-  }
-
-  displayTransactions(cardNumber: Number): Observable<Transaction[]> {
-    console.log('Card number: ', cardNumber);
-
-    return this.creditCardService.filterTransactions(Number(cardNumber));
   }
 
   ngOnInit(): void {}
