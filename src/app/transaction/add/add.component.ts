@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreditCardService } from 'src/app/credit-card/service/credit-card.service';
 import { Transaction } from '../transaction.type';
@@ -17,9 +17,9 @@ export class TransactionAddComponent implements OnInit {
 
   transactionForm = this.formBuilder.group({
     credit_card: [''],
-    amount: [''],
-    currency: [''],
-    date: [''],
+    amount: ['', [Validators.required]],
+    currency: ['', [Validators.required]],
+    date: ['', [Validators.required]],
     comment: [''],
   });
 
@@ -49,5 +49,17 @@ export class TransactionAddComponent implements OnInit {
     this.creditCardService.addTransaction(transaction);
 
     this.router.navigate(['../']);
+  }
+
+  get amount(): FormControl {
+    return this.transactionForm.get('amount') as FormControl;
+  }
+
+  get currency(): FormControl {
+    return this.transactionForm.get('currency') as FormControl;
+  }
+
+  get date(): FormControl {
+    return this.transactionForm.get('date') as FormControl;
   }
 }
