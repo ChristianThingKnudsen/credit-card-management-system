@@ -23,9 +23,11 @@
     </li>
     <h2>Transactions:</h2>
     <ul>
-      <li *ngFor="let transaction of transactions$ | async">
-        {{ transaction.amount }}, {{ transaction.currency }}
-      </li>
+      <transaction-list-item
+        *ngFor="let transaction of transactions$ | async; index as i"
+        [transaction]="transaction"
+      >
+      </transaction-list-item>
     </ul>
   </div>
 </div>

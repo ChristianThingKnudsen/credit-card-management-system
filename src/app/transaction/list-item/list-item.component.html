@@ -1,1 +1,18 @@
-<p>list-item works!</p>
+<ul>
+  <li>
+    Credit card: <span>{{ transaction.credit_card.card_number }}</span>
+  </li>
+  <li>
+    amount: <span>{{ transaction.amount }}</span>
+  </li>
+  <li>
+    Currency: <span>{{ transaction.currency }}</span>
+  </li>
+  <li>
+    Comment: <span>{{ transaction.comment }}</span>
+  </li>
+  <li>
+    Date: <span>{{ transaction.date }}</span>
+  </li>
+</ul>
+<button (click)="deleteTransaction(transaction.uid)">Delete</button>

@@ -22,7 +22,9 @@ export class TransactionListComponent implements OnInit {
     console.log(this.transactions$);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Transaction list onInit');
+  }
 
   ngOnChanges(): void {}
 
@@ -36,10 +38,5 @@ export class TransactionListComponent implements OnInit {
       Number(card_number)
     );
     console.log('List: ', this.transactions$);
-  }
-
-  deleteTransaction(id: String) {
-    this.creditCardService.deleteTransaction(id);
-    this.transactions$ = this.creditCardService.getTransactions();
   }
 }

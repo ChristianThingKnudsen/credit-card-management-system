@@ -1,4 +1,5 @@
-<p>list works!</p>
+<h1>Transaction Overview</h1>
+<a>Credit card number: </a>
 <select formControlName="creditCard" id="card_number">
   <option *ngFor="let creditCard of creditCards$ | async">
     {{ creditCard.card_number }}
@@ -6,10 +7,9 @@
 </select>
 <button (click)="filterTransactions()">Filter transaction</button>
 <ul>
-  <li *ngFor="let transaction of transactions$ | async; index as i">
-    <a routerLink="list/{{ i }}"
-      >{{ transaction.uid }}, {{ transaction.currency }}</a
-    >
-    <button (click)="deleteTransaction(transaction.uid)">Delete</button>
-  </li>
+  <transaction-list-item
+    *ngFor="let transaction of transactions$ | async; index as i"
+    [transaction]="transaction"
+  >
+  </transaction-list-item>
 </ul>
