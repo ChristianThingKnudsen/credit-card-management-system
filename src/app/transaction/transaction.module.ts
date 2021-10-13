@@ -7,6 +7,7 @@ import { TransactionListComponent } from './list/list.component';
 import { TransactionListItemComponent } from './list-item/list-item.component';
 import { TransactionAddComponent } from './add/add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     TransactionListItemComponent,
     TransactionAddComponent,
   ],
-  imports: [CommonModule, TransactionRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    TransactionRoutingModule,
+    ReactiveFormsModule,
+    MatCardModule,
+  ],
   exports: [
     TransactionOverviewComponent,
     TransactionListComponent,

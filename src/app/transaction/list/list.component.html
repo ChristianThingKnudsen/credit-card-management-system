@@ -8,10 +8,12 @@
 <button (click)="filterTransactions()">Filter transaction</button>
 <button (click)="addTransaction()">Add Transaction</button>
 
-<ul>
-  <transaction-list-item
-    *ngFor="let transaction of transactions$ | async; index as i"
-    [transaction]="transaction"
-  >
-  </transaction-list-item>
-</ul>
+<!-- <ul> -->
+<transaction-list-item
+  *ngFor="let transaction of transactions$ | async; index as i"
+  [transaction]="transaction"
+>
+</transaction-list-item>
+<!-- <br></br> -->
+>
+<!-- </ul> -->
