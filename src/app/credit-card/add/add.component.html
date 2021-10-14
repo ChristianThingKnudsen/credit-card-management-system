@@ -1,8 +1,16 @@
-<p>Hello</p>
+<h1 class="md-headline">Add credit card</h1>
 <form [formGroup]="creditCardForm" (ngSubmit)="addCreditCard()">
   <div class="form-wrapper">
-    <label for="card_number">Card number: </label>
-    <input type="number" formControlName="card_number" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="card_number">Card number</mat-label>
+      <input
+        matInput
+        placeholder="Some number"
+        type="number"
+        formControlName="card_number"
+      />
+    </mat-form-field>
+
     <div
       *ngIf="card_number.invalid && (card_number.dirty || card_number.touched)"
     >
@@ -15,8 +23,11 @@
       </div>
     </div>
     <hr />
-    <label for="cardholder_name">Name: </label>
-    <input type="text" formControlName="cardholder_name" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="cardholder_name">Name: </mat-label>
+      <input matInput type="text" formControlName="cardholder_name" />
+    </mat-form-field>
+
     <div
       *ngIf="
         cardholder_name.invalid &&
@@ -26,8 +37,11 @@
       <div *ngIf="cardholder_name.errors?.required">Field is required</div>
     </div>
     <hr />
-    <label for="csc_code">CSC: </label>
-    <input type="number" formControlName="csc_code" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="csc_code">CSC: </mat-label>
+      <input matInput type="number" formControlName="csc_code" />
+    </mat-form-field>
+
     <div *ngIf="csc_code.invalid && (csc_code.dirty || csc_code.touched)">
       <div *ngIf="csc_code.errors?.required">Field is required</div>
       <div *ngIf="csc_code.errors?.min?.min || csc_code.errors?.max?.max">
@@ -35,8 +49,11 @@
       </div>
     </div>
     <hr />
-    <label for="expiration_date_month">Expiration date month: </label>
-    <input type="number" formControlName="expiration_date_month" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="expiration_date_month">Expiration date month: </mat-label>
+      <input matInput type="number" formControlName="expiration_date_month" />
+    </mat-form-field>
+
     <div
       *ngIf="
         expiration_date_month.invalid &&
@@ -58,8 +75,11 @@
       </div>
     </div>
     <hr />
-    <label for="expiration_date_year">Expiration date year: </label>
-    <input type="number" formControlName="expiration_date_year" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="expiration_date_year">Expiration date year: </mat-label>
+      <input matInput type="number" formControlName="expiration_date_year" />
+    </mat-form-field>
+
     <div
       *ngIf="
         expiration_date_year.invalid &&
@@ -79,10 +99,18 @@
       </div>
     </div>
     <hr />
-    <label for="issuer">Issuer: </label>
-    <input type="text" formControlName="issuer" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="issuer">Issuer: </mat-label>
+      <input matInput type="text" formControlName="issuer" />
+    </mat-form-field>
+
     <hr />
-    <button type="submit" [disabled]="creditCardForm.invalid">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="creditCardForm.invalid"
+    >
       Add credit card
     </button>
   </div>

@@ -8,6 +8,10 @@ import { TransactionListItemComponent } from './list-item/list-item.component';
 import { TransactionAddComponent } from './add/add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,11 @@ import { MatCardModule } from '@angular/material/card';
     TransactionRoutingModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatButtonModule,
+    MatOptionModule,
+    MatSelectModule,
+
+    FlexLayoutModule,
   ],
   exports: [
     TransactionOverviewComponent,

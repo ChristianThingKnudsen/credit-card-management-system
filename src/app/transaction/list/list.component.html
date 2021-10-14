@@ -1,19 +1,31 @@
 <h1>Transaction Overview</h1>
-<a>Credit card number: </a>
-<select id="card_number">
-  <option *ngFor="let creditCard of creditCards$ | async">
-    {{ creditCard.card_number }}
-  </option>
-</select>
-<button (click)="filterTransactions()">Filter transaction</button>
-<button (click)="addTransaction()">Add Transaction</button>
 
-<!-- <ul> -->
+<div fxLayout="row" fxLayoutAlign="center">
+  <p>Credit card number:</p>
+  <select id="card_number">
+    <option *ngFor="let creditCard of creditCards$ | async">
+      {{ creditCard.card_number }}
+    </option>
+  </select>
+
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Card number</mat-label>
+    <mat-select matNativeControl required id="card_number">
+      <mat-option *ngFor="let creditCard of creditCards$ | async">
+        {{ creditCard.card_number }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  <button mat-raised-button color="primary" (click)="filterTransactions()">
+    Filter transaction
+  </button>
+  <button mat-raised-button (click)="addTransaction()">Add Transaction</button>
+</div>
+<hr />
 <transaction-list-item
   *ngFor="let transaction of transactions$ | async; index as i"
   [transaction]="transaction"
 >
 </transaction-list-item>
-<!-- <br></br> -->
 >
-<!-- </ul> -->

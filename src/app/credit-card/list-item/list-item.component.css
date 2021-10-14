@@ -1,0 +1,12 @@
+mat-card {
+  background-color: whitesmoke;
+}
+div {
+  padding-top: 25px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+  padding-left: 30px;
+}
+button:hover {
+  background-color: wheat;
+}

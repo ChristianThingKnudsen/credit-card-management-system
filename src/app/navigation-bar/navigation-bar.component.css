@@ -6,7 +6,7 @@
 /*
 For inspiration https://www.w3schools.com/css/css_navbar_horizontal.asp
 */
-ul {
+/* ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
-  /* display: table; */
+
 }
 
 li {
@@ -31,7 +31,6 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #04aa6d on hover */
 li a:hover {
   background-color: #04aa6d;
 }
@@ -50,4 +49,4 @@ h1 {
   margin: 0;
   padding: 0;
   height: 2px;
-}
+} */

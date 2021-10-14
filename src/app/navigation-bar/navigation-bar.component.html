@@ -1,10 +1,12 @@
-<ul>
-  <h1 style="float: center">{{ title }}</h1>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="/transactions">Transactions</a></li>
-  <li style="float: right">
-    <a class="active" routerLink="/credit-card/add">Add credit card</a>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<!--Inspired from example in lesson06 -->
+<mat-toolbar color="primary">
+  <div class="container">
+    <span>{{ title }}</span>
+    <a mat-button routerLink="">Home</a>
+    <a mat-button routerLink="/transactions">Transactions</a>
+    <a mat-button routerLink="/credit-card/add">Add credit card</a>
+  </div>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
