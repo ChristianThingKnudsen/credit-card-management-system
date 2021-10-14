@@ -7,8 +7,8 @@
     >
     <mat-card-content> CSC code: {{ creditCard.csc_code }}</mat-card-content>
     <mat-card-content>
-      Expiration date: {{ creditCard.expiration_date_month }} /
-      {{ creditCard.expiration_date_year }}</mat-card-content
+      Expiration date:
+      {{ creditCard | expiration | date: "MM/yy" }}</mat-card-content
     >
     <mat-card-content> Issuer: {{ creditCard.issuer }}</mat-card-content>
     <mat-card-actions>
