@@ -16,15 +16,15 @@
     >
       <div *ngIf="card_number.errors?.required">Field is required</div>
       <div *ngIf="card_number.errors?.min?.min">
-        Must be at least {{ card_number.errors?.min?.min }}
+        Must be at least {{ card_number_min }}
       </div>
       <div *ngIf="card_number.errors?.max?.max">
-        Must be less than {{ card_number.errors?.max?.max }}
+        Must be less than {{ card_number_max }}
       </div>
     </div>
     <hr />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label for="cardholder_name">Name: </mat-label>
+      <mat-label for="cardholder_name">Cardholder name</mat-label>
       <input matInput type="text" formControlName="cardholder_name" />
     </mat-form-field>
 
@@ -38,7 +38,7 @@
     </div>
     <hr />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label for="csc_code">CSC: </mat-label>
+      <mat-label for="csc_code">CSC</mat-label>
       <input matInput type="number" formControlName="csc_code" />
     </mat-form-field>
 
@@ -50,7 +50,7 @@
     </div>
     <hr />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label for="expiration_date_month">Expiration date month: </mat-label>
+      <mat-label for="expiration_date_month">Expiration date month</mat-label>
       <input matInput type="number" formControlName="expiration_date_month" />
     </mat-form-field>
 
@@ -70,13 +70,13 @@
         "
       >
         Must be between
-        {{ expiration_date_month.errors?.min?.min }} and
-        {{ expiration_date_month.errors?.max?.max }}
+        {{ expiration_month_min }} and
+        {{ expiration_month_max }}
       </div>
     </div>
     <hr />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label for="expiration_date_year">Expiration date year: </mat-label>
+      <mat-label for="expiration_date_year">Expiration date year</mat-label>
       <input matInput type="number" formControlName="expiration_date_year" />
     </mat-form-field>
 
@@ -94,13 +94,13 @@
         "
       >
         Must be between
-        {{ expiration_date_year.errors?.min?.min }} and
-        {{ expiration_date_year.errors?.max?.max }}
+        {{ expiration_year_min }} and
+        {{ expiration_year_max }}
       </div>
     </div>
     <hr />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label for="issuer">Issuer: </mat-label>
+      <mat-label for="issuer">Issuer</mat-label>
       <input matInput type="text" formControlName="issuer" />
     </mat-form-field>
 
@@ -117,5 +117,5 @@
 </form>
 <!-- <pre>
   errors:
-  {{ csc_code.errors | json }}
+  {{ expiration_date_month.errors | json }}
 </pre> -->

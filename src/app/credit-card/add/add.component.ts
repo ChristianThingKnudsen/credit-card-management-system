@@ -11,6 +11,12 @@ import { Router } from '@angular/router';
 })
 export class CreditCardAddComponent implements OnInit {
   creditCardForm: any;
+  card_number_min: number = 7;
+  card_number_max: number = 16;
+  expiration_month_min: number = 1;
+  expiration_month_max: number = 12;
+  expiration_year_min: number = 1;
+  expiration_year_max: number = 31;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,8 +31,8 @@ export class CreditCardAddComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.min(10000000),
-          Validators.max(9999999999999999),
+          Validators.min(1000000), // min 7 length
+          Validators.max(9999999999999999), // max 16 length
         ],
       ],
       cardholder_name: ['', [Validators.required]],
@@ -36,15 +42,19 @@ export class CreditCardAddComponent implements OnInit {
       ],
       expiration_date_month: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(12)],
+        [
+          Validators.required,
+          Validators.min(this.expiration_month_min),
+          Validators.max(this.expiration_month_max),
+        ],
       ],
       expiration_date_year: [
         '',
         {
           validators: [
             Validators.required,
-            Validators.min(1),
-            Validators.max(31),
+            Validators.min(this.expiration_year_min),
+            Validators.max(this.expiration_year_max),
           ],
           updateOn: 'change',
         },
