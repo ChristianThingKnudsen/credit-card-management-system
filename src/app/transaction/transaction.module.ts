@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatOptionModule,
     MatSelectModule,
-
+    MatFormFieldModule,
+    MatInputModule, 
     FlexLayoutModule,
   ],
   exports: [

@@ -1,31 +1,15 @@
-<!-- <ul>
-  <li>
-    Credit card: <span>{{ transaction.credit_card.card_number }}</span>
-  </li>
-  <li>
-    amount: <span>{{ transaction.amount }}</span>
-  </li>
-  <li>
-    Currency: <span>{{ transaction.currency }}</span>
-  </li>
-  <li>
-    Comment: <span>{{ transaction.comment }}</span>
-  </li>
-  <li>
-    Date: <span>{{ transaction.date }}</span>
-  </li>
-</ul>
-<button (click)="deleteTransaction(transaction.uid)">Delete</button> -->
 <div>
   <mat-card>
     <mat-card-title
-      >Card Number: {{ transaction.credit_card.card_number }}</mat-card-title
+      >Amount: {{ transaction.amount | number: "1.0-2" }}
+      {{ transaction.currency }}
+    </mat-card-title>
+    <mat-card-subtitle
+      >Date: {{ transaction.date | date: "fullDate" }}</mat-card-subtitle
     >
-    <mat-card-subtitle>Date: {{ transaction.date }}</mat-card-subtitle>
-    <mat-card-content>
-      Amount: {{ transaction.amount }}
-      {{ transaction.currency }}</mat-card-content
-    >
+    <mat-card-content
+      >Card Number: {{ transaction.credit_card.card_number }}
+    </mat-card-content>
 
     <mat-card-actions>
       <button
@@ -36,6 +20,9 @@
         Delete
       </button>
     </mat-card-actions>
-    <mat-card-footer> {{ transaction.comment }} </mat-card-footer>
+
+    <mat-card-footer *ngIf="transaction.comment">
+      Comment: {{ transaction.comment }}
+    </mat-card-footer>
   </mat-card>
 </div>

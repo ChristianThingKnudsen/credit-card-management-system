@@ -19,7 +19,6 @@ const routes: Routes = [
         (m) => m.TransactionModule
       ),
   },
-  //TODO: Should we add a page not found here? Look at exercise 2
 ];
 
 @NgModule({

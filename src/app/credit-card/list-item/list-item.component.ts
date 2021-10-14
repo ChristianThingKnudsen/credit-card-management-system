@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { Transaction } from 'src/app/transaction/transaction.type';
 import { CreditCard } from '../credit-card.type';
 import { CreditCardService } from '../service/credit-card.service';
 

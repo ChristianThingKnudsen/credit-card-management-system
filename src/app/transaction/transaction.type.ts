@@ -3,8 +3,8 @@ import { CreditCard } from '../credit-card/credit-card.type';
 export interface Transaction {
   credit_card: CreditCard;
   uid: String;
-  amount: Number;
+  amount: number;
   comment: String;
-  date: Number; // TODO: Should maybe be a date?
+  date: number;
   currency: String;
 }

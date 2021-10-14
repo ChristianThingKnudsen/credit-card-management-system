@@ -10,7 +10,7 @@
 
   <!-- <mat-form-field appearance="fill">
     <mat-label>Card number</mat-label>
-    <mat-select matNativeControl required id="card_number">
+    <mat-select id="card_number">
       <mat-option *ngFor="let creditCard of creditCards$ | async">
         {{ creditCard.card_number }}
       </mat-option>
@@ -23,9 +23,10 @@
   <button mat-raised-button (click)="addTransaction()">Add Transaction</button>
 </div>
 <hr />
-<transaction-list-item
-  *ngFor="let transaction of transactions$ | async; index as i"
-  [transaction]="transaction"
->
-</transaction-list-item>
->
+<div style="overflow-y: scroll; height: 400px">
+  <transaction-list-item
+    *ngFor="let transaction of transactions$ | async; index as i"
+    [transaction]="transaction"
+  >
+  </transaction-list-item>
+</div>

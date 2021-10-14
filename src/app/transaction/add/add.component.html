@@ -16,14 +16,20 @@
       <div *ngIf="credit_card.errors?.required">Field is required</div>
     </div>
     <hr />
-    <label for="amount">Amount: </label>
-    <input type="number" formControlName="amount" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="amount">Amount: </mat-label>
+      <input matInput type="number" formControlName="amount" />
+    </mat-form-field>
+
     <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
       <div *ngIf="amount.errors?.required">Field is required</div>
     </div>
     <hr />
-    <label for="currency">Currency: </label>
-    <input type="text" formControlName="currency" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="currency">Currency: </mat-label>
+      <input matInput type="text" formControlName="currency" />
+    </mat-form-field>
+
     <div *ngIf="currency.invalid && (currency.dirty || currency.touched)">
       <div *ngIf="currency.errors?.required">Field is required</div>
     </div>
@@ -34,10 +40,18 @@
       <div *ngIf="date.errors?.required">Field is required</div>
     </div>
     <hr />
-    <label for="comment">Comment: </label>
-    <input type="text" formControlName="comment" />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="comment">Comment: </mat-label>
+      <input matInput type="text" formControlName="comment" />
+    </mat-form-field>
+
     <hr />
-    <button type="submit" [disabled]="transactionForm.invalid">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="transactionForm.invalid"
+    >
       Add transaction
     </button>
   </div>
