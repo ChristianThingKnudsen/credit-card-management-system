@@ -28,10 +28,7 @@ export class TransactionListComponent implements OnInit {
 
   ngOnChanges(): void {}
 
-  filterTransactions() {
-    const card_number = (<HTMLInputElement>(
-      document.getElementById('card_number')
-    )).value;
+  filterTransactions(card_number: Number) {
     console.log('Card number: ', card_number);
 
     this.transactions$ = this.creditCardService.filterTransactions(

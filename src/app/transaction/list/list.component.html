@@ -1,25 +1,20 @@
 <h1>Transaction Overview</h1>
 
 <div fxLayout="row" fxLayoutAlign="center">
-  <p>Credit card number:</p>
-  <select id="card_number">
-    <option *ngFor="let creditCard of creditCards$ | async">
-      {{ creditCard.card_number }}
-    </option>
-  </select>
-
-  <!-- <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Card number</mat-label>
-    <mat-select id="card_number">
-      <mat-option *ngFor="let creditCard of creditCards$ | async">
+    <mat-select
+      id="card_number"
+      (selectionChange)="filterTransactions($event.value)"
+    >
+      <mat-option
+        *ngFor="let creditCard of creditCards$ | async"
+        [value]="creditCard.card_number"
+      >
         {{ creditCard.card_number }}
       </mat-option>
     </mat-select>
-  </mat-form-field> -->
-
-  <button mat-raised-button color="primary" (click)="filterTransactions()">
-    Filter transaction
-  </button>
+  </mat-form-field>
   <button mat-raised-button (click)="addTransaction()">Add Transaction</button>
 </div>
 <hr />

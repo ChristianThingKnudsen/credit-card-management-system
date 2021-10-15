@@ -31,7 +31,7 @@ import { MatInputModule } from '@angular/material/input';
     MatOptionModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     FlexLayoutModule,
   ],
   exports: [

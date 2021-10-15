@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NavigationBarComponent, HomeComponent],
@@ -18,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatButtonModule,
     MatToolbarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
