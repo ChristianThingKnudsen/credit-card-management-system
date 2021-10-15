@@ -45,4 +45,5 @@ To the skeleton the following commands has been used:
 - ng g c -m transaction transaction/listItem
 - ng g c -m transaction transaction/add
 
-- ng generate pipe credit-card/creditCard
+- ng g pipe credit-card/creditCard
+- ng g m shared
