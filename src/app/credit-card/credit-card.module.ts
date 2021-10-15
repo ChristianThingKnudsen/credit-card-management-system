@@ -5,13 +5,9 @@ import { CreditCardRoutingModule } from './credit-card-routing.module';
 import { CreditCardAddComponent } from './add/add.component';
 import { CreditCardListComponent } from './list/list.component';
 import { CreditCardListItemComponent } from './list-item/list-item.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TransactionModule } from '../transaction/transaction.module';
 import { CreditCardPipe } from './credit-card.pipe';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,12 +19,8 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     CreditCardRoutingModule,
-    ReactiveFormsModule,
     TransactionModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
+    SharedModule,
   ],
   exports: [
     CreditCardAddComponent,
